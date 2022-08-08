@@ -17,7 +17,6 @@ function encryptText(keyStr, text) {
 module.exports = (pwd, data) => {
     let str = Buffer.from(data['_']).toString();
     let key = CryptoJS.MD5(pwd).toString().substr(0, 16);
-    console.log(key);
     data[pwd] = Buffer.from(encryptText(key, str), 'binary');
     delete data['_'];
     return data;

@@ -1,6 +1,4 @@
 code = """
-package org.example;
-
 import javax.servlet.ServletContext;
 import javax.websocket.*;
 import javax.websocket.server.ServerContainer;
