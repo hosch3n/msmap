@@ -97,7 +97,7 @@ dotnet_compiler_path = r"C:\Windows\Microsoft.NET\Framework\v2.0.50727\csc.exe"
 private static String pattern = "*.xml";
 ```
 
-WsFilter does not currently support automatic compilation. If an encryption encoder is used, the password needs to be the same as the path (eg `/passwd`)
+WsFilter暂不支持自动编译。如果使用了加密编码器，密码需要与路径相同（如`/passwd`）
 
 ## 示例
 
