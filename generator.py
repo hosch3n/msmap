@@ -68,21 +68,25 @@ def generator(options):
     src_dst = f'target/{options["container"]}{options["model"]}.{language_name}'
     with open(src_dst, 'w') as f:
         f.write(src)
+        
+    print(
+        f'\nOutputPath: target/{options["container"]}{options["model"]}.java'
+    )
 
     if auto_build:
+        if model_name == "wsfilter":
+            sys.exit("---\nWsFilter currently does not support auto_build.")
+        
         compiler_path = eval(f"{language_name}_compiler_path")
         p = subprocess.Popen(
             f"{compiler_path} {src_dst}",shell=True,
             stdout=subprocess.PIPE,stderr=subprocess.STDOUT
         )
         sleep(1)
-        print(
-            f'OutputPath: target/{options["container"]}{options["model"]}.java'
-        )
+        class_dst = f'target/{options["container"]}{options["model"]}.class'
+        print(f"            {class_dst}")
 
         if b64_class:
-            class_dst = f'target/{options["container"]}{options["model"]}.class'
-            print(f"            {class_dst}")
             b64file(class_dst)
 
 def get_menu(menu_dict):

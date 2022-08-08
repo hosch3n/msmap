@@ -34,6 +34,7 @@ Msmap是一个内存马生成器，兼容多种容器、组件、编码器、*We
 - WebShell
   - [x] CMD / SH
   - [x] AntSword
+  - [x] JSPJS
   - [ ] Behinder
   - [ ] Godzilla
 - Proxy
@@ -68,7 +69,7 @@ cd msmap
 python generator.py
 ```
 
-> [注意] 尽量用独一无二的密码
+> [注意] 尽量用独一无二的密码；各选项大小敏感
 
 ### 进阶
 
@@ -95,6 +96,8 @@ dotnet_compiler_path = r"C:\Windows\Microsoft.NET\Framework\v2.0.50727\csc.exe"
 // Servlet路径匹配规则
 private static String pattern = "*.xml";
 ```
+
+WsFilter does not currently support automatic compilation. If an encryption encoder is used, the password needs to be the same as the path (eg `/passwd`)
 
 ## 示例
 

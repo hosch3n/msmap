@@ -34,6 +34,7 @@ Msmap is a Memory WebShell Generator. Compatible with various Containers, Compon
 - WebShell
   - [x] CMD / SH
   - [x] AntSword
+  - [x] JSPJS
   - [ ] Behinder
   - [ ] Godzilla
 - Proxy
@@ -68,7 +69,7 @@ cd msmap
 python generator.py
 ```
 
-> [Warning] MUST set a unique password
+> [Warning] MUST set a unique password, Options are case sensitive.
 
 ### Advanced
 
@@ -95,6 +96,8 @@ Edit `gist/java/container/tomcat/servlet.py`
 // Servlet Path Pattern
 private static String pattern = "*.xml";
 ```
+
+WsFilter暂不支持自动编译。如果使用了加密编码器，密码需要与路径相同（如`/passwd`）
 
 ## Example
 
