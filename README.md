@@ -14,6 +14,7 @@ Msmap is a Memory WebShell Generator. Compatible with various Containers, Compon
 - [x] Dynamic Menu
 - [x] Automatic Compilation
 - [x] Generate Script
+- [ ] Lite Mode
 - [ ] Graphical Interface
 
 ### Container
