@@ -4,6 +4,8 @@ Msmap is a Memory WebShell Generator. Compatible with various Containers, Compon
 
 [简体中文](README_CN.md)
 
+[The idea behind(One)](https://hosch3n.github.io/2022/08/08/Msmap%E5%86%85%E5%AD%98%E9%A9%AC%E7%94%9F%E6%88%90%E6%A1%86%E6%9E%B6%EF%BC%88%E4%B8%80%EF%BC%89/)
+
 ![](img/a.png)
 
 <details>
