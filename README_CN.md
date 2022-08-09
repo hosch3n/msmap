@@ -129,6 +129,17 @@ WsFilter暂不支持自动编译。如果使用了加密编码器，密码需要
 
 </details>
 
+<details>
+<summary>哥斯拉</summary>
+
+**JAVA_AES_BASE64**类型 | 注入到 Tomcat Valve
+
+`python generator.py Java Tomcat Listener AES128 Godzilla superidol`
+
+> [已知问题](https://github.com/BeichenDream/Godzilla/issues/76)
+
+</details>
+
 ## Reference
 
 [GodzillaMemoryShellProject](https://github.com/BeichenDream/GodzillaMemoryShellProject)
