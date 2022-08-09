@@ -40,7 +40,7 @@ Msmap is a Memory WebShell Generator. Compatible with various Containers, Compon
   - [x] AntSword
   - [x] JSPJS
   - [ ] Behinder
-  - [ ] Godzilla
+  - [x] Godzilla
 - Proxy
   - [ ] Neo-reGeorg
   - [ ] wsproxy
