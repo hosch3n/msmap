@@ -1,7 +1,7 @@
 # RC-4-SHA256
 code = """
     private byte[] cipher(
-            byte[] payload, String alg, byte[] key, boolean isEnc
+        byte[] payload, String alg, byte[] key, boolean isEnc
     ) {
         try {
             StringBuilder hkey = new StringBuilder();

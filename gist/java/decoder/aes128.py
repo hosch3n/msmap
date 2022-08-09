@@ -1,7 +1,7 @@
 # AES-128-ECB-PKCS7-MD5
 code = """
     private byte[] cipher(
-            byte[] payload, String alg, byte[] key, boolean isEnc
+        byte[] payload, String alg, byte[] key, boolean isEnc
     ) {
         try {
             javax.crypto.Cipher c = javax.crypto.Cipher.getInstance(alg);

