@@ -136,7 +136,7 @@ Type **JSP** with **[rc_4_sha256](extend/AntSword/encoder/rc_4_sha256.js)** Enco
 
 Type **JAVA_AES_BASE64** | Inject Tomcat Valve
 
-`python generator.py Java Tomcat Listener AES128 Godzilla superidol`
+`python generator.py Java Tomcat Valve AES128 Godzilla superidol`
 
 > [Known issue](https://github.com/BeichenDream/Godzilla/issues/76)
 
