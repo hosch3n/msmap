@@ -4,7 +4,7 @@ code = """
         if (payload == null) {
             return null;
         }
-        payload = decoder(payload);
+        payload = new String(decoder(payload));
         Process process;
         boolean iswin = System.getProperty("os.name").toLowerCase()
                 .startsWith("windows");

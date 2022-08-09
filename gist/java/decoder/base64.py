@@ -1,6 +1,5 @@
 code = """
-    private String decoder(String payload) {
-        payload = new String(b64decode(payload));
-        return payload;
+    private byte[] decoder(String payload) {
+        return b64decode(payload);
     }
 """

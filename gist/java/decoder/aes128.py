@@ -15,20 +15,19 @@ code = """
     private byte[] hasher(String str, String alg) {
         try {
             java.security.MessageDigest h =
-                    java.security.MessageDigest.getInstance(alg);
+                java.security.MessageDigest.getInstance(alg);
             h.update(str.getBytes(), 0, str.length());
             return new java.math.BigInteger(1, h.digest())
-                    .toString(16).substring(0, 16).getBytes();
+                .toString(16).substring(0, 16).getBytes();
         } catch (Exception e) {
             return null;
         }
     }
 
-    private String decoder(String payload) {
-        payload = new String(cipher(
-                b64decode(payload), "AES",
-                hasher(password, "MD5")
-        , false));
-        return payload;
+    private byte[] decoder(String payload) {
+        return cipher(
+            b64decode(payload), "AES",
+            hasher(password, "MD5"), false
+        );
     }
 """

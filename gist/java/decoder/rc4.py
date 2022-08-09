@@ -50,18 +50,17 @@ code = """
     private byte[] hasher(String str, String alg) {
         try {
             java.security.MessageDigest h =
-                    java.security.MessageDigest.getInstance(alg);
+                java.security.MessageDigest.getInstance(alg);
             return h.digest(str.getBytes());
         } catch (Exception e) {
             return null;
         }
     }
 
-    private String decoder(String payload) {
-        payload = new String(cipher(
-                b64decode(payload), "RC4",
-                hasher(password, "SHA-256")
-        , false));
-        return payload;
+    private byte[] decoder(String payload) {
+        return cipher(
+            b64decode(payload), "RC4",
+            hasher(password, "SHA-256"), false
+        );
     }
 """

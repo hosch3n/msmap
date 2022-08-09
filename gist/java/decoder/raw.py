@@ -1,5 +1,5 @@
 code = """
-    private String decoder(String payload) {
-        return payload;
+    private byte[] decoder(String payload) {
+        return payload.getBytes();
     }
 """

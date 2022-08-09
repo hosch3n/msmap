@@ -42,7 +42,6 @@ def generator(options):
     decoder_name = options["decoder"].lower()
     stub_name = options["stub"].lower()
     password = options["password"]
-    # key = options["key"]
 
     try:
         model = import_module(
@@ -111,10 +110,6 @@ def main():
         options["decoder"] = argv[4]
         options["stub"] = argv[5]
         options["password"] = argv[6]
-        # try:
-        #     options["key"] = argv[7]
-        # except IndexError:
-        #     options["key"] = ''
         generator(options)
         sys.exit()
 
@@ -135,9 +130,6 @@ def main():
             else:
                 sys.exit("Bye!")
         elif ARCH[depth] == "password":
-            break
-
-        if depth > 6:
             break
 
     generator(options)
