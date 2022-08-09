@@ -4,59 +4,91 @@ MENU = {
             # "Executor": {},
             "Valve": {
                 "RAW": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
                 },
                 "Base64": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
                 },
                 "AES128": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
+                    "Godzilla": {"PassWord": {}},
                 },
                 "RC4": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
                 },
             },
             "Listener": {
                 "RAW": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
                 },
                 "Base64": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
                 },
                 "AES128": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
+                    "Godzilla": {"PassWord": {}},
                 },
                 "RC4": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
                 },
             },
             # "Filter": {},
             "WsFilter": {
                 "RAW": {
-                    "CMD": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
                 },
                 "Base64": {
-                    "CMD": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
                 },
                 "AES128": {
-                    "CMD": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
+                    "Godzilla": {"PassWord": {}},
                 },
                 "RC4": {
-                    "CMD": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
                 },
             },
             "Servlet": {
                 "RAW": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
                 },
                 "Base64": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
                 },
                 "AES128": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
+                    "Godzilla": {"PassWord": {}},
                 },
                 "RC4": {
-                    "CMD": {"PassWord": {}}, "AntSword": {"PassWord": {}}, "JSPJS": {"PassWord": {}}
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
                 },
             },
         }

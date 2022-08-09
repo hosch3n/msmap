@@ -1,5 +1,5 @@
 code = """
-    private static final Object lock = new Object();
+    private static Object lock = new Object();
 
     private Field getField(Object obj, String fieldName) {
         Class clazz;

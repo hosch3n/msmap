@@ -12,13 +12,12 @@ code = """
         }
     }
 
-    private byte[] hasher(String str, String alg) {
+    private String hasher(String str, String alg) {
         try {
             java.security.MessageDigest h =
                 java.security.MessageDigest.getInstance(alg);
             h.update(str.getBytes(), 0, str.length());
-            return new java.math.BigInteger(1, h.digest())
-                .toString(16).substring(0, 16).getBytes();
+            return new java.math.BigInteger(1, h.digest()).toString(16);
         } catch (Exception e) {
             return null;
         }
@@ -27,7 +26,7 @@ code = """
     private byte[] decoder(String payload) {
         return cipher(
             b64decode(payload), "AES",
-            hasher(password, "MD5"), false
+            hasher(password, "MD5").substring(0, 16).getBytes(), false
         );
     }
 """
