@@ -40,7 +40,7 @@ Msmap是一个内存马生成器，兼容多种容器、组件、编码器、*We
   - [x] AntSword
   - [x] JSPJS
   - [ ] Behinder
-  - [ ] Godzilla
+  - [x] Godzilla
 - Proxy
   - [ ] Neo-reGeorg
   - [ ] wsproxy

