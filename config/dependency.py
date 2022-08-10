@@ -17,6 +17,7 @@ MENU = {
                     "CMD": {"PassWord": {}},
                     "AntSword": {"PassWord": {}},
                     "JSPJS": {"PassWord": {}},
+                    "Behinder": {"PassWord": {}},
                     "Godzilla": {"PassWord": {}},
                 },
                 "RC4": {
@@ -40,6 +41,7 @@ MENU = {
                     "CMD": {"PassWord": {}},
                     "AntSword": {"PassWord": {}},
                     "JSPJS": {"PassWord": {}},
+                    "Behinder": {"PassWord": {}},
                     "Godzilla": {"PassWord": {}},
                 },
                 "RC4": {
@@ -61,7 +63,6 @@ MENU = {
                 "AES128": {
                     "CMD": {"PassWord": {}},
                     "JSPJS": {"PassWord": {}},
-                    "Godzilla": {"PassWord": {}},
                 },
                 "RC4": {
                     "CMD": {"PassWord": {}},
@@ -83,6 +84,7 @@ MENU = {
                     "CMD": {"PassWord": {}},
                     "AntSword": {"PassWord": {}},
                     "JSPJS": {"PassWord": {}},
+                    "Behinder": {"PassWord": {}},
                     "Godzilla": {"PassWord": {}},
                 },
                 "RC4": {

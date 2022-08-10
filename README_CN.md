@@ -8,6 +8,8 @@ Msmap是一个内存马生成器，兼容多种容器、组件、编码器、*We
 
 ![](img/a.png)
 
+![](img/c.png)
+
 ![](img/b.png)
 
 <details>
@@ -39,7 +41,7 @@ Msmap是一个内存马生成器，兼容多种容器、组件、编码器、*We
   - [x] CMD / SH
   - [x] AntSword
   - [x] JSPJS
-  - [ ] Behinder
+  - [x] Behinder
   - [x] Godzilla
 - Proxy
   - [ ] Neo-reGeorg
@@ -130,6 +132,15 @@ WsFilter暂不支持自动编译。如果使用了加密编码器，密码需要
 `python generator.py Java Tomcat Servlet RC4 AntSword passwd`
 
 **JSPJS**类型 搭配 **[aes_128_ecb_pkcs7_padding_md5](extend/AntSword/encoder/aes_128_ecb_pkcs7_padding_md5.js)** 编码器 | 注入到 Tomcat WsFilter
+
+</details>
+
+<details>
+<summary>冰蝎</summary>
+
+**default_aes**类型 | 注入到 Tomcat Valve
+
+`python generator.py Java Tomcat Valve AES128 Behinder rebeyond`
 
 </details>
 
