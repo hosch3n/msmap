@@ -129,6 +129,10 @@ Type **JSP** with **[rc_4_sha256](extend/AntSword/encoder/rc_4_sha256.js)** Enco
 
 `python generator.py Java Tomcat Servlet RC4 AntSword passwd`
 
+Type **JSPJS** with **[aes_128_ecb_pkcs7_padding_md5](extend/AntSword/encoder/aes_128_ecb_pkcs7_padding_md5.js)** Encoder | Inject Tomcat WsFilter
+
+`python generator.py Java Tomcat WsFilter AES128 JSPJS passwd`
+
 </details>
 
 <details>
