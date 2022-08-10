@@ -82,7 +82,6 @@ public class TomcatWsFilter extends Endpoint
                 }} else {{
                     clazzs.add(null);
                 }}
-
             }}
         }}
         Method method = getMethod(
