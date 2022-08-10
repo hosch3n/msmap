@@ -133,6 +133,8 @@ WsFilter暂不支持自动编译。如果使用了加密编码器，密码需要
 
 **JSPJS**类型 搭配 **[aes_128_ecb_pkcs7_padding_md5](extend/AntSword/encoder/aes_128_ecb_pkcs7_padding_md5.js)** 编码器 | 注入到 Tomcat WsFilter
 
+`python generator.py Java Tomcat WsFilter AES128 JSPJS passwd`
+
 </details>
 
 <details>
