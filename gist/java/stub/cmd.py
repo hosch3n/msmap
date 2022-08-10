@@ -20,6 +20,9 @@ code = """
         java.util.Scanner s = new java.util.Scanner(process.getInputStream())
             .useDelimiter("\\\\A");
         String result = s.hasNext()?s.next():"";
+        try {
+            invokeMethod(invokeMethod(response, "getWriter"), "write", result);
+        } catch (Exception e) {}
         return result;
     }
 """
