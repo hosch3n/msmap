@@ -41,12 +41,12 @@ Msmap is a Memory WebShell Generator. Compatible with various Containers, Compon
   - [x] JSPJS
   - [x] Behinder
   - [x] Godzilla
-- Proxy
-  - [ ] Neo-reGeorg
-  - [ ] wsproxy
-- Killer(As-Exploits)
-  - [x] java-memshell-scanner
-  - [x] ASP.NET-Memshell-Scanner
+
+- No need for modularity
+~~Proxy: Neo-reGeorg, wsproxy~~
+~~Killer(As-Exploits):~~
+~~java-memshell-scanner,~~
+~~ASP.NET-Memshell-Scanner~~
 
 ### Decoder / Decryptor / Hasher
 

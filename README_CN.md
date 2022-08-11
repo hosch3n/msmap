@@ -41,12 +41,12 @@ Msmap是一个内存马生成器，兼容多种容器、组件、编码器、*We
   - [x] JSPJS
   - [x] Behinder
   - [x] Godzilla
-- Proxy
-  - [ ] Neo-reGeorg
-  - [ ] wsproxy
-- Killer(As-Exploits)
-  - [x] java-memshell-scanner
-  - [x] ASP.NET-Memshell-Scanner
+
+- *没有模块化的必要*
+~~Proxy: Neo-reGeorg, wsproxy~~
+~~Killer(As-Exploits):~~
+~~java-memshell-scanner,~~
+~~ASP.NET-Memshell-Scanner~~
 
 ### Decoder / Decryptor / Hasher
 
