@@ -30,6 +30,8 @@ Msmap是一个内存马生成器，兼容多种容器、组件、编码器、*We
   - [x] Tomcat10
   - [ ] Resin
   - [ ] Weblogic
+  - [ ] Spring
+  - [ ] Netty
 - .NET
   - [ ] IIS
 
@@ -43,10 +45,9 @@ Msmap是一个内存马生成器，兼容多种容器、组件、编码器、*We
   - [x] Godzilla
 
 - *没有模块化的必要*
+
 ~~Proxy: Neo-reGeorg, wsproxy~~
-~~Killer(As-Exploits):~~
-~~java-memshell-scanner,~~
-~~ASP.NET-Memshell-Scanner~~
+~~Killer: java-memshell-scanner, ASP.NET-Memshell-Scanner~~
 
 ### Decoder / Decryptor / Hasher
 
