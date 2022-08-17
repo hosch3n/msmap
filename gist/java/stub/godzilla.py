@@ -5,7 +5,7 @@ code = """
         try {
             base64 = Class.forName("java.util.Base64");
             str = (String) invokeMethod(
-                getMethodX(base64, "getEncoder", 0).invoke(base64, null),
+                getMethodX(base64, "getEncoder", 0).invoke(base64),
                 "encodeToString", result
             );
         } catch (ClassNotFoundException e) {
