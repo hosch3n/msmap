@@ -42,7 +42,9 @@ code = """
                 )+
                 fix.substring(16).toUpperCase();
             try {
-                invokeMethod(invokeMethod(response, "getWriter"), "write", result);
+                invokeMethod(
+                    invokeMethod(response, "getWriter"), "write", result
+                );
             } catch (Exception e) {}
             return result;
         } else {

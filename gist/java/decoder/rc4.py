@@ -20,7 +20,8 @@ code = """
                 return null;
             }
             for (int i = 0; i < 256; i++) {
-                index2 = ((jkey[index1] & 0xff) + (state[i] & 0xff) + index2) & 0xff;
+                index2 = ((jkey[index1] & 0xff) + (state[i] & 0xff) + index2)
+                    & 0xff;
                 byte tmp = state[i];
                 state[i] = state[index2];
                 state[index2] = tmp;

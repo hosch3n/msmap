@@ -1,7 +1,9 @@
 'use strict';
 
 const path = require('path');
-var CryptoJS = require(path.join(window.antSword.remote.process.env.AS_WORKDIR, 'node_modules/crypto-js'));
+var CryptoJS = require(path.join(
+  window.antSword.remote.process.env.AS_WORKDIR, 'node_modules/crypto-js'
+));
 
 function encryptText(keyStr, text) {
   let buff = Buffer.alloc(16, 'a');

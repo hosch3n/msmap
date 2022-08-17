@@ -94,13 +94,6 @@ code = """
         return Thread.currentThread().getContextClassLoader();
     }
 
-    private Object getStandardContext() {
-        return invokeMethod(
-            getFieldValue(getLoader(), "resources"),
-            "getContext"
-        );
-    }
-
     private byte[] b64decode(String payload) {
         Class base64;
         byte[] bytes = null;

