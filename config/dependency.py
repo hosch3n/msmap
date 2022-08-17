@@ -93,7 +93,33 @@ MENU = {
                     "JSPJS": {"PassWord": {}},
                 },
             },
-        }
+        },
+        "Resin": {
+            "Listener": {
+                "RAW": {
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
+                },
+                "Base64": {
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
+                },
+                "AES128": {
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
+                    "Behinder": {"PassWord": {}},
+                    "Godzilla": {"PassWord": {}},
+                },
+                "RC4": {
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
+                },
+            },
+        },
     }
 }
 
