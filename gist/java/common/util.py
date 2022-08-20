@@ -84,6 +84,7 @@ code = """
             (Class[]) clazzs.toArray(new Class[]{})
         );
         try {
+            method.setAccessible(true);
             return method.invoke(obj, args);
         } catch (Exception e) {
             return null;

