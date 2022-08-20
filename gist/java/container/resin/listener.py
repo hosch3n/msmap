@@ -22,7 +22,7 @@ public class ResinListener extends ClassLoader implements InvocationHandler {{
     @Override
     public Object invoke(Object proxy, Method method, Object[] args)
             throws Throwable {{
-        if (method.getName().equals("requestDestroyed")) {{
+        if (method.getName().equals("requestInitialized")) {{
             Object servletRequestEvent = args[0];
             hook(servletRequestEvent);
         }}
