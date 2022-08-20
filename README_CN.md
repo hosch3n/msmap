@@ -34,8 +34,9 @@ Msmap是一个内存马生成器，兼容多种容器、组件、编码器、*We
   - [ ] GlassFish
   - [ ] WebLogic
   - [ ] JBoss
-  - [ ] Spring
+  - [x] Spring
   - [ ] Netty
+  - [ ] JVM
 - .NET
   - [ ] IIS
 

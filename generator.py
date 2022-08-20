@@ -21,18 +21,21 @@ LOGO = r"""
                    \|_________|                                   
 """
 
+def genscript(b64_str):
+    jsp_dst = "target/shell.jsp"
+    with open(jsp_dst, 'w') as f:
+        f.write(JSP.format(clazz=b64_str))
+        print(f"            {jsp_dst}")
+    jspx_dst = "target/shell.jspx"
+    with open(jspx_dst, 'w') as f:
+        f.write(JSPX.format(clazz=b64_str))
+        print(f"            {jspx_dst}")
+
 def b64file(file_name):
     with open(file_name, "rb") as fb:
         b64_str = base64.b64encode(fb.read()).decode("utf-8")
-    if generate_script:
-        jsp_dst = "target/shell.jsp"
-        with open(jsp_dst, 'w') as f:
-            f.write(JSP.format(clazz=b64_str))
-            print(f"            {jsp_dst}")
-        jspx_dst = "target/shell.jspx"
-        with open(jspx_dst, 'w') as f:
-            f.write(JSPX.format(clazz=b64_str))
-            print(f"            {jspx_dst}")
+    if generate_script and "spring" not in file_name.lower():
+        genscript(b64_str)
     print(f"---\n{b64_str}")
 
 def generator(options):
