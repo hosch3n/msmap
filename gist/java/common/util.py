@@ -21,7 +21,12 @@ code = """
             }
         }
         if (field != null) {
-            field.setAccessible(true);
+            try {
+                Field mf = Field.class.getDeclaredField("modifiers");
+                mf.setAccessible(true);
+                mf.setInt(field, field.getModifiers() & ~Modifier.FINAL);
+                field.setAccessible(true);
+            } catch (Exception e) {}
         }
         return field;
     }
