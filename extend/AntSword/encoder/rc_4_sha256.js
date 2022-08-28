@@ -5,7 +5,7 @@ var CryptoJS = require(path.join(
     window.antSword.remote.process.env.AS_WORKDIR, 'node_modules/crypto-js'
 ));
 
-function rc4(data, key) {
+function rc4(key, data) {
     let pwd = key;
     let cipher = '';
     key = [];
@@ -37,7 +37,7 @@ function rc4(data, key) {
 module.exports = (pwd, data) => {
     let str = Buffer.from(data['_']).toString();
     let key = CryptoJS.SHA256(pwd).toString();
-    data[pwd] = Buffer.from(rc4(str, key), 'binary').toString('base64');
+    data[pwd] = Buffer.from(rc4(key, str), 'binary').toString('base64');
     delete data['_'];
     return data;
 }
