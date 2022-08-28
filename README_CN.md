@@ -63,6 +63,7 @@ Msmap是一个内存马生成器，兼容多种容器、组件、编码器、*We
   - [x] Base64
   - [ ] Hex
 - Decryptor
+  - [x] XOR
   - [x] RC4
   - [x] AES128
   - [x] AES256
@@ -150,6 +151,10 @@ WsFilter暂不支持自动编译。如果使用了加密编码器，密码需要
 **default_aes**类型 | 注入到 Tomcat Valve
 
 `python generator.py Java Tomcat Valve AES128 Behinder rebeyond`
+
+**default_xor_base64**类型 | 注入到 Spring Interceptor
+
+python generator.py Java Spring Interceptor XOR Behinder rebeyond
 
 </details>
 

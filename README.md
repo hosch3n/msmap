@@ -63,6 +63,7 @@ Msmap is a Memory WebShell Generator. Compatible with various Containers, Compon
   - [x] Base64
   - [ ] Hex
 - Decryptor
+  - [x] XOR
   - [x] RC4
   - [x] AES128
   - [x] AES256
@@ -150,6 +151,10 @@ Type **JSPJS** with **[aes_128_ecb_pkcs7_padding_md5](extend/AntSword/encoder/ae
 Type **default_aes** | Inject Tomcat Valve
 
 `python generator.py Java Tomcat Valve AES128 Behinder rebeyond`
+
+Type **default_xor_base64** | Inject Spring Interceptor
+
+python generator.py Java Spring Interceptor XOR Behinder rebeyond
 
 </details>
 

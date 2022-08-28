@@ -13,6 +13,12 @@ MENU = {
                     "AntSword": {"PassWord": {}},
                     "JSPJS": {"PassWord": {}},
                 },
+                "XOR": {
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
+                    "Behinder": {"PassWord": {}},
+                },
                 "AES128": {
                     "CMD": {"PassWord": {}},
                     "AntSword": {"PassWord": {}},
@@ -37,6 +43,12 @@ MENU = {
                     "AntSword": {"PassWord": {}},
                     "JSPJS": {"PassWord": {}},
                 },
+                "XOR": {
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
+                    "Behinder": {"PassWord": {}},
+                },
                 "AES128": {
                     "CMD": {"PassWord": {}},
                     "AntSword": {"PassWord": {}},
@@ -60,6 +72,10 @@ MENU = {
                     "CMD": {"PassWord": {}},
                     "JSPJS": {"PassWord": {}},
                 },
+                "XOR": {
+                    "CMD": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
+                },
                 "AES128": {
                     "CMD": {"PassWord": {}},
                     "JSPJS": {"PassWord": {}},
@@ -79,6 +95,12 @@ MENU = {
                     "CMD": {"PassWord": {}},
                     "AntSword": {"PassWord": {}},
                     "JSPJS": {"PassWord": {}},
+                },
+                "XOR": {
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
+                    "Behinder": {"PassWord": {}},
                 },
                 "AES128": {
                     "CMD": {"PassWord": {}},
@@ -106,6 +128,12 @@ MENU = {
                     "AntSword": {"PassWord": {}},
                     "JSPJS": {"PassWord": {}},
                 },
+                "XOR": {
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
+                    "Behinder": {"PassWord": {}},
+                },
                 "AES128": {
                     "CMD": {"PassWord": {}},
                     "AntSword": {"PassWord": {}},
@@ -131,6 +159,12 @@ MENU = {
                     "CMD": {"PassWord": {}},
                     "AntSword": {"PassWord": {}},
                     "JSPJS": {"PassWord": {}},
+                },
+                "XOR": {
+                    "CMD": {"PassWord": {}},
+                    "AntSword": {"PassWord": {}},
+                    "JSPJS": {"PassWord": {}},
+                    "Behinder": {"PassWord": {}},
                 },
                 "AES128": {
                     "CMD": {"PassWord": {}},
