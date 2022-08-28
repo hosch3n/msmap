@@ -4,7 +4,7 @@ import javax.websocket.*;
 import javax.websocket.server.ServerContainer;
 import javax.websocket.server.ServerEndpointConfig;
 import java.lang.reflect.*;
-import java.util.ArrayList;
+import java.util.*;
 
 public class TomcatWsFilter extends Endpoint
         implements MessageHandler.Whole<String>
@@ -144,7 +144,7 @@ public class TomcatWsFilter extends Endpoint
             .create(TomcatWsFilter.class, password).build();
         ServerContainer container = (ServerContainer) servletContext
             .getAttribute(ServerContainer.class.getName());
-        if (servletContext.getAttribute(password) == null){{
+        if (servletContext.getAttribute(password) == null) {{
             container.addEndpoint(configEndpoint);
             servletContext.setAttribute(password, password);
         }}

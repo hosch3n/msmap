@@ -3,7 +3,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.ArrayList;
+import java.util.*;
 
 public class SpringInterceptor extends ClassLoader implements InvocationHandler {{
     private static String password = "{password}";

