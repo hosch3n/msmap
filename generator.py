@@ -24,11 +24,11 @@ LOGO = r"""
 def genscript(b64_str):
     jsp_dst = "target/shell.jsp"
     with open(jsp_dst, 'w') as f:
-        f.write(JSP.format(clazz=b64_str))
+        f.write(JSP_PREFIX+b64_str+JSP_POSTFIX)
         print(f"            {jsp_dst}")
     jspx_dst = "target/shell.jspx"
     with open(jspx_dst, 'w') as f:
-        f.write(JSPX.format(clazz=b64_str))
+        f.write(JSPX_PREFIX+b64_str+JSPX_POSTFIX)
         print(f"            {jspx_dst}")
 
 def b64file(file_name):
