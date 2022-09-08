@@ -36,7 +36,7 @@ Msmap是一个内存马生成器，兼容多种容器、组件、编码器、*We
   - [ ] JBoss
   - [x] Spring
   - [ ] Netty
-  - [ ] JVM
+  - [x] JVM*
 - .NET
   - [ ] IIS
 - PHP
@@ -113,6 +113,8 @@ private static String pattern = "*.xml";
 
 WsFilter暂不支持自动编译。如果使用了加密编码器，密码需要与路径相同（如`/passwd`）
 
+`pip3 install pyperclip` 可启用自动复制到系统剪切板
+
 ## 示例
 
 <details>
@@ -154,7 +156,7 @@ WsFilter暂不支持自动编译。如果使用了加密编码器，密码需要
 
 **default_xor_base64**类型 | 注入到 Spring Interceptor
 
-python generator.py Java Spring Interceptor XOR Behinder rebeyond
+`python generator.py Java Spring Interceptor XOR Behinder rebeyond`
 
 </details>
 

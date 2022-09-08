@@ -34,9 +34,23 @@ def genscript(b64_str):
 def b64file(file_name):
     with open(file_name, "rb") as fb:
         b64_str = base64.b64encode(fb.read()).decode("utf-8")
+    if "javax" in file_name.lower():
+        try:
+            pyperclip = import_module("pyperclip")
+            pyperclip.copy(b64_str)
+            print(f"---\nBase64 copied to clipboard.")
+        except ModuleNotFoundError:
+            print(f"---\n{b64_str}")
+        sys.exit("[WIP]")
     if generate_script and "spring" not in file_name.lower():
         genscript(b64_str)
-    print(f"---\n{b64_str}")
+        
+    try:
+        pyperclip = import_module("pyperclip")
+        pyperclip.copy(b64_str)
+        print(f"---\nBase64 copied to clipboard.")
+    except ModuleNotFoundError:
+        print(f"---\n{b64_str}")
 
 def generator(options):
     language_name = options["language"].lower()
@@ -65,17 +79,23 @@ def generator(options):
     except ModuleNotFoundError:
         sys.exit("Not supported currently, Check Your Input!")
 
-    src = model.code.format(
-        common=common.code, context=context.code, decoder=decoder.code,
-        stub=stub.code, password=password
-    )
+    if model_name == "javax":
+        src = model.code.format(
+            decoder=decoder.proc, stub=stub.proc, password=password
+        )
+        src_dst = f'target/javax/servlet/http/HttpServlet.java'
+    else:
+        src = model.code.format(
+            common=common.code, context=context.code, decoder=decoder.code,
+            stub=stub.code, password=password
+        )
+        src_dst = f'target/{options["container"]}{options["model"]}.{language_name}'
 
-    src_dst = f'target/{options["container"]}{options["model"]}.{language_name}'
     with open(src_dst, 'w') as f:
         f.write(src)
         
     print(
-        f'\nOutputPath: target/{options["container"]}{options["model"]}.java'
+        f'\nOutputPath: {src_dst}'
     )
 
     if auto_build:
@@ -84,11 +104,14 @@ def generator(options):
         
         compiler_path = eval(f"{language_name}_compiler_path")
         p = subprocess.Popen(
-            f"{compiler_path} {src_dst}",shell=True,
+            f"{compiler_path} -cp {java_lib_path} {src_dst}",shell=True,
             stdout=subprocess.PIPE,stderr=subprocess.STDOUT
         )
         sleep(1)
-        class_dst = f'target/{options["container"]}{options["model"]}.class'
+        if model_name == "javax":
+            class_dst = f'target/javax/servlet/http/HttpServlet.class'
+        else:
+            class_dst = f'target/{options["container"]}{options["model"]}.class'
         print(f"            {class_dst}")
 
         if b64_class:
@@ -103,7 +126,7 @@ def get_menu(menu_dict):
 def main():
     argv = sys.argv
     next_menu_dict = MENU
-    stack_menu_list =[]
+    stack_menu_list = []
     options = {}
     depth = 1
 
