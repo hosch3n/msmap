@@ -56,6 +56,18 @@ public class TomcatWsFilter extends Endpoint
             return null;
         }}
     }}
+    
+    private Method getMethodX(Class clazz, String methodName, int num) {{
+        Method[] methods = clazz.getDeclaredMethods();
+        for (Method method : methods) {{
+            if (method.getName().equals(methodName)) {{
+                if (method.getParameterTypes().length == num) {{
+                    return method;
+                }}
+            }}
+        }}
+        return null;
+    }}
 
     private Method getMethod(Class clazz, String methodName, Class... args) {{
         Method method = null;
@@ -136,7 +148,7 @@ public class TomcatWsFilter extends Endpoint
         }}
     }}
 
-    private void addWsFilter() throws DeploymentException {{
+    private void addWsFilter() throws Exception {{
         ServletContext servletContext = (ServletContext) invokeMethod(
             getStandardContext(), "getServletContext"
         );
@@ -154,7 +166,7 @@ public class TomcatWsFilter extends Endpoint
         synchronized(lock) {{
             try {{
                 addWsFilter();
-            }} catch (DeploymentException e) {{}}
+            }} catch (Exception e) {{}}
         }}
     }}
 

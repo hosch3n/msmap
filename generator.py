@@ -99,9 +99,6 @@ def generator(options):
     )
 
     if auto_build:
-        if model_name == "wsfilter":
-            sys.exit("---\nWsFilter currently does not support auto_build.")
-        
         compiler_path = eval(f"{language_name}_compiler_path")
         p = subprocess.Popen(
             f"{compiler_path} -cp {java_lib_path} {src_dst}",shell=True,
