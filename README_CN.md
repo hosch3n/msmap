@@ -111,7 +111,7 @@ dotnet_compiler_path = r"C:\Windows\Microsoft.NET\Framework\v2.0.50727\csc.exe"
 private static String pattern = "*.xml";
 ```
 
-WsFilter暂不支持自动编译。如果使用了加密编码器，密码需要与路径相同（如`/passwd`）
+如果WsFilter使用了加密编码器，密码需要与路径相同（如`/passwd`）
 
 `pip3 install pyperclip` 可启用自动复制到系统剪切板
 

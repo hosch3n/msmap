@@ -111,7 +111,7 @@ Edit `gist/java/container/tomcat/servlet.py`
 private static String pattern = "*.xml";
 ```
 
-WsFilter does not currently support automatic compilation. If an encryption encoder is used, the password needs to be the same as the path (eg `/passwd`)
+If an encryption encoder is used in WsFilter, the password needs to be the same as the path (eg `/passwd`)
 
 `pip3 install pyperclip` to support automatic copying to clipboard.
 
