@@ -42,6 +42,8 @@ Msmap is a Memory WebShell Generator. Compatible with various Containers, Compon
 - PHP
 - Python
 
+*: Default support for `Linux Tomcat 8/9`, more versions can be adapted according to the advanced guide.
+
 ### WebShell / Proxy / Killer
 
 - WebShell
@@ -112,6 +114,8 @@ private static String pattern = "*.xml";
 ```
 
 If an encryption encoder is used in WsFilter, the password needs to be the same as the path (eg `/passwd`)
+
+`gist/java/container/jdk/javax.py` with `lib/servlet-api.jar` can be replaced depending on the target container.
 
 `pip3 install pyperclip` to support automatic copying to clipboard.
 

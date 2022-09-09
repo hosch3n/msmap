@@ -42,6 +42,8 @@ Msmap是一个内存马生成器，兼容多种容器、组件、编码器、*We
 - PHP
 - Python
 
+*：默认支持`Linux Tomcat 8/9`，可以根据进阶指南适配更多版本
+
 ### WebShell / Proxy / Killer
 
 - WebShell
@@ -112,6 +114,8 @@ private static String pattern = "*.xml";
 ```
 
 如果WsFilter使用了加密编码器，密码需要与路径相同（如`/passwd`）
+
+可以根据目标容器替换 `gist/java/container/jdk/javax.py` 与 `lib/servlet-api.jar`
 
 `pip3 install pyperclip` 可启用自动复制到系统剪切板
 

