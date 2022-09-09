@@ -145,6 +145,10 @@ private static String pattern = "*.xml";
 
 `python generator.py Java Tomcat Servlet RC4 AntSword passwd`
 
+**JSP**类型 搭配 **[xor_md5](extend/AntSword/encoder/xor_md5.js)** 编码器 | AgentFiless注入到 HttpServlet
+
+`python generator.py Java JDK JavaX XOR AntSword passwd`
+
 **JSPJS**类型 搭配 **[aes_128_ecb_pkcs7_padding_md5](extend/AntSword/encoder/aes_128_ecb_pkcs7_padding_md5.js)** 编码器 | 注入到 Tomcat WsFilter
 
 `python generator.py Java Tomcat WsFilter AES128 JSPJS passwd`
@@ -170,6 +174,10 @@ private static String pattern = "*.xml";
 **JAVA_AES_BASE64**类型 | 注入到 Tomcat Valve
 
 `python generator.py Java Tomcat Valve AES128 Godzilla superidol`
+
+**JAVA_AES_BASE64**类型 | AgentFiless注入到 HttpServlet
+
+`python generator.py Java JDK JavaX AES128 Godzilla superidol`
 
 > [已知问题](https://github.com/BeichenDream/Godzilla/issues/76)
 

