@@ -44,7 +44,7 @@ def b64file(file_name):
             print(f"            {src_dst}")
 
         p = subprocess.Popen(
-            f"{java_compiler_path} -cp {java_lib_path} {src_dst}",shell=True,
+            f"{java_compiler_path} -cp {JAVA_LIB_PATH} {src_dst}",shell=True,
             stdout=subprocess.PIPE,stderr=subprocess.STDOUT
         )
         sleep(1)
@@ -112,7 +112,7 @@ def generator(options):
     if auto_build:
         compiler_path = eval(f"{language_name}_compiler_path")
         p = subprocess.Popen(
-            f"{compiler_path} -cp {java_lib_path} {src_dst}",shell=True,
+            f"{compiler_path} -cp {JAVA_LIB_PATH} {src_dst}",shell=True,
             stdout=subprocess.PIPE,stderr=subprocess.STDOUT
         )
         sleep(1)
