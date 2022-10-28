@@ -56,7 +56,7 @@ public class TomcatWsFilter extends Endpoint
             return null;
         }}
     }}
-    
+
     private Method getMethodX(Class clazz, String methodName, int num) {{
         Method[] methods = clazz.getDeclaredMethods();
         for (Method method : methods) {{
