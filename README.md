@@ -34,13 +34,15 @@ Msmap is a Memory WebShell Generator. Compatible with various Containers, Compon
   - [ ] GlassFish
   - [ ] WebLogic
   - [ ] JBoss
-  - [x] Spring
+  - [x] Spring*
   - [ ] Netty
   - [x] JVM*
 - .NET
   - [ ] IIS
 - PHP
 - Python
+
+*: SpringHandler only support for JDK8+
 
 *: Default support for `Linux Tomcat 8/9`, more versions can be adapted according to the advanced guide.
 
@@ -153,6 +155,10 @@ Type **JSPJS** with **[aes_128_ecb_pkcs7_padding_md5](extend/AntSword/encoder/ae
 
 `python generator.py Java Tomcat WsFilter AES128 JSPJS passwd`
 
+Type **JSPJS** with **[xor_md5](extend/AntSword/encoder/xor_md5.js)** Encoder | Inject Spring Handler
+
+`python generator.py Java Spring Handler XOR JSPJS passwd`
+
 </details>
 
 <details>
@@ -178,6 +184,10 @@ Type **JAVA_AES_BASE64** | Inject Tomcat Valve
 Type **JAVA_AES_BASE64** | AgentFiless Inject HttpServlet
 
 `python generator.py Java JDK JavaX AES128 Godzilla superidol`
+
+Type **JAVA_AES_BASE64** | Inject Spring Handler
+
+`python generator.py Java Spring Handler AES128 Godzilla superidol`
 
 > [Known issue](https://github.com/BeichenDream/Godzilla/issues/76)
 
