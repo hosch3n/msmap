@@ -28,7 +28,7 @@ Msmap is a Memory WebShell Generator. Compatible with various Containers, Compon
   - [x] Tomcat8
   - [x] Tomcat9
   - [x] Tomcat10
-  - [ ] Resin3
+  - [x] Resin3
   - [x] Resin4
   - [ ] WebSphere
   - [ ] GlassFish

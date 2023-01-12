@@ -28,7 +28,7 @@ Msmap是一个内存马生成器，兼容多种容器、组件、编码器、*We
   - [x] Tomcat8
   - [x] Tomcat9
   - [x] Tomcat10
-  - [ ] Resin3
+  - [x] Resin3
   - [x] Resin4
   - [ ] WebSphere
   - [ ] GlassFish
