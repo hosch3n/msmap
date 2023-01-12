@@ -230,6 +230,10 @@ private static String pattern = "*.xml";
 
 [Linux下内存马进阶植入技术](https://xz.aliyun.com/t/10186)
 
+[Spring cloud gateway通过SPEL注入内存马](https://gv7.me/articles/2022/the-spring-cloud-gateway-inject-memshell-through-spel-expressions/)
+
+[CVE-2022-22947 注入哥斯拉内存马](https://blog.wanghw.cn/tech-share/cve-2022-22947-inject-godzilla-memshell.html)
+
 [Linux下无文件Java agent探究](https://tttang.com/archive/1525/)
 
 [论如何优雅的注入Java Agent内存马](https://xz.aliyun.com/t/11640)
