@@ -44,7 +44,7 @@ Msmap is a Memory WebShell Generator. Compatible with various Containers, Compon
 
 *: SpringHandler only support for JDK8+
 
-*: Default support for `Linux Tomcat 8/9`, more versions can be adapted according to the advanced guide.
+*: JVM Default support for `Linux Tomcat 8/9`, more versions can be adapted according to the advanced guide.
 
 ### WebShell / Proxy / Killer
 

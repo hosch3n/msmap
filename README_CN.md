@@ -44,7 +44,7 @@ Msmap是一个内存马生成器，兼容多种容器、组件、编码器、*We
 
 *：SpringHandler仅支持JDK8+
 
-*：默认支持`Linux Tomcat 8/9`，可以根据进阶指南适配更多版本
+*：JVM默认支持`Linux Tomcat 8/9`，可以根据进阶指南适配更多版本
 
 ### WebShell / Proxy / Killer
 
