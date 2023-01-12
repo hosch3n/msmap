@@ -202,3 +202,33 @@ private static String pattern = "*.xml";
 [As-Exploits memshell_manage](https://github.com/yzddmr6/As-Exploits/tree/master/core/memshell_manage)
 
 [Behinder](https://github.com/rebeyond/Behinder) | [wsMemShell](https://github.com/veo/wsMemShell) | [ysomap](https://github.com/wh1t3p1g/ysomap)
+
+## 扩展阅读
+
+[利用“进程注入”实现无文件复活 WebShell](https://www.freebuf.com/articles/web/172753.html)
+
+[基于内存 Webshell 的无文件攻击技术研究](https://landgrey.me/blog/12/)
+
+[利用 intercetor 注入 spring 内存 webshell](https://landgrey.me/blog/19/)
+
+[linux下java反序列化通杀回显方法的低配版实现](https://xz.aliyun.com/t/7307)
+
+[Tomcat中一种半通用回显方法](https://xz.aliyun.com/t/7348)
+
+[基于tomcat的内存 Webshell 无文件攻击技术](https://xz.aliyun.com/t/7388)
+
+[基于全局储存的新思路 | Tomcat的一种通用回显方法研究](https://mp.weixin.qq.com/s?__biz=MzIwNDA2NDk5OQ==&amp;mid=2651374294&amp;idx=3&amp;sn=82d050ca7268bdb7bcf7ff7ff293d7b3)
+
+[tomcat不出网回显连续剧第六集](https://xz.aliyun.com/t/7535)
+
+[中间件内存马注入&冰蝎连接](https://paper.seebug.org/1441/#2mbeancontext)
+
+[Java内存马：一种Tomcat全版本获取StandardContext的新方法](https://xz.aliyun.com/t/9914)
+
+[Java内存攻击技术漫谈](https://xz.aliyun.com/t/10075)
+
+[Linux下内存马进阶植入技术](https://xz.aliyun.com/t/10186)
+
+[Linux下无文件Java agent探究](https://tttang.com/archive/1525/)
+
+[论如何优雅的注入Java Agent内存马](https://xz.aliyun.com/t/11640)
