@@ -204,7 +204,8 @@ Type **JAVA_AES_BASE64** | Inject Spring Handler
 
 [Behinder](https://github.com/rebeyond/Behinder) | [wsMemShell](https://github.com/veo/wsMemShell) | [ysomap](https://github.com/wh1t3p1g/ysomap)
 
-## Extended Reading
+<details>
+<summary>Extended Reading</summary>
 
 [利用“进程注入”实现无文件复活 WebShell](https://www.freebuf.com/articles/web/172753.html)
 
@@ -237,3 +238,5 @@ Type **JAVA_AES_BASE64** | Inject Spring Handler
 [Linux下无文件Java agent探究](https://tttang.com/archive/1525/)
 
 [论如何优雅的注入Java Agent内存马](https://xz.aliyun.com/t/11640)
+
+</details>
