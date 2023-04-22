@@ -32,7 +32,7 @@ Msmap is a Memory WebShell Generator. Compatible with various Containers, Compon
   - [x] Resin4
   - [ ] WebSphere
   - [ ] GlassFish
-  - [ ] WebLogic
+  - [x] WebLogic
   - [ ] JBoss
   - [x] Spring*
   - [ ] Jetty

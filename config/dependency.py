@@ -148,6 +148,25 @@ MENU = {
                 },
             },
         },
+        "Weblogic": {
+            "Listener": {
+                "RAW": {
+                    "CMD": {"PassWord": {}},
+                },
+                "Base64": {
+                    "CMD": {"PassWord": {}},
+                },
+                "XOR": {
+                    "CMD": {"PassWord": {}},
+                },
+                "AES128": {
+                    "CMD": {"PassWord": {}},
+                },
+                "RC4": {
+                    "CMD": {"PassWord": {}},
+                },
+            },
+        },
         "Spring": {
             "Interceptor": {
                 "RAW": {
