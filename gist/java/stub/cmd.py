@@ -24,7 +24,7 @@ code = """
         String result = i.hasNext()?i.next():e.hasNext()?e.next():"";
         try {
             invokeMethod(invokeMethod(response, "getWriter"), "write", result);
-        } catch (Exception e) {}
+        } catch (Exception ex) {}
         return result;
     }
 """
